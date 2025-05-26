@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy JAR app to Azure Web App - IngSoftware2demo
+name: Build and deploy JAR app to Azure Web App - ingSoftware2demo
 
 on:
   push:
@@ -21,7 +21,7 @@ jobs:
       - name: Set up Java version
         uses: actions/setup-java@v4
         with:
-          java-version: '17'
+          java-version: '21.0'
           distribution: 'microsoft'
 
       - name: Build with Maven
@@ -52,15 +52,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_25116DE255CE4357A751767F69FF6B76 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_2F4FA8F801654898BC65982ED4A76027 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_8EE67460C8BA4D26B7C69099747F77B5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_5D20CFB57BC344A2AD8F9C3632094FED }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_796F9A67FDC24E82AAC7B221267F62D1 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_65479C8BA5024B72A79816CE9A19D44F }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'IngSoftware2demo'
+          app-name: 'ingSoftware2demo'
           slot-name: 'Production'
           package: '*.jar'
           
